@@ -13,9 +13,167 @@ img{
     display: block;
 }
 
+/* BODY */
+body{
+    min-width: 500px;
+}
+
+/* FONTS */
+
+/* Stili */
+.serif{
+    font-family: serif;
+}
+
+.sans-serif{
+    font-family: sans-serif;
+}
+
+.monospace{
+    font-family: monospace;
+}
+
+.cursive{
+    font-family: cursive;
+}
+
+.fantasy{
+    font-family: fantasy;
+}
+
+/* Web Safe fonts più usati (classifica di HubSpot) */
+.arial{
+    font-family: 'Arial', sans-serif;
+}
+
+.arial-black{
+    font-family: 'Arial-Black', sans-serif;
+}
+
+.verdana{
+    font-family: 'Verdana', sans-serif;
+}
+
+.tahoma{
+    font-family: 'Tahoma', sans-serif;
+}
+
+.trebuchet-ms{
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.impact{
+    font-family: 'Impact', sans-serif;
+}
+
+.times-new-roman{
+    font-family: 'Times New Roman', serif;
+}
+
+.didot{
+    font-family: 'Didot', serif;
+}
+
+.georgia{
+    font-family: 'Georgia', serif;
+}
+
+.american-typewriter{
+    font-family: 'American Typewriter', serif;
+}
+
+.andale-mono{
+    font-family: 'Andalé Mono', monospace;
+}
+
+.courier{
+    font-family: 'Courier', monospace;
+}
+
+.lucida-console{
+    font-family: 'Lucida Console', monospace;
+}
+
+.monaco{
+    font-family: 'Monaco', monospace;
+}
+
+.bradley-hand{
+    font-family: 'Bradley Hand', cursive;
+}
+
+.brush-script-mt{
+    font-family: 'Brush Script MT', cursive;
+}
+
+.luminari{
+    font-family: 'Luminari', fantasy;
+}
+
+.comic-sans-ms{
+    font-family: 'Comic Sans MS', cursive;
+}
+
+/* Google fonts più usati (classifica di Nestify) */
+.roboto{
+    font-family: 'Roboto', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> */
+}
+
+.open-sans{
+    font-family: 'Open Sans', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> */
+}
+
+.lato{
+    font-family: 'Lato', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> */
+}
+
+.slabo-27px{
+    font-family: 'Slabo 27px', serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet"> */
+}
+
+.oswald{
+    font-family: 'Oswald', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet"> */
+}
+
+.roboto-condensed{
+    font-family: 'Roboto Condensed', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet"> */
+}
+
+.source-sans-pro{
+    font-family: 'Source Sans Pro', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet"> */
+}
+
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=PT+Sans&family=Raleway:wght@300&display=swap" rel="stylesheet"> */
+}
+
+.raleway{
+    font-family: 'Raleway', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Raleway:wght@300&display=swap" rel="stylesheet"> */
+}
+
+.pt-sans{
+    font-family: 'PT Sans', sans-serif;
+    /* link: <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet"> */
+}
+
+
+
+
+
+
+
+
+
 /* IMPOSTAZIONE CONTAINERS */
-
-
 .fluid-container{
     width: 100%;
 }
@@ -202,3 +360,9 @@ img{
 .col-offset-11{
     margin-left: calc((100% / 12) * 11);
 }
+
+
+/* QUERY CON BREAKPOINTS BOOTSTRAP 5.0 */
+
+/* Mobile first */
+
