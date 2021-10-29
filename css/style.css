@@ -5,6 +5,12 @@
     border: 1px solid white;
     color: white;
     text-align: center;
+    padding: 10px;
 }
 
 /* IMPOSTAZIONE NESTED */
+.nested-box{
+    height: 100%;
+    background-color: #00e165;
+    text-align: center;
+}
