@@ -1,4 +1,4 @@
-/* Impostazione dei box */
+/* IMPOSTAZIONE DEI BOX */
 .box{
     min-height: 50px;
     background-color: blue;
@@ -6,3 +6,5 @@
     color: white;
     text-align: center;
 }
+
+/* IMPOSTAZIONE NESTED */
