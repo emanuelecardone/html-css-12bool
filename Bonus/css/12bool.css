@@ -1,17 +1,32 @@
 /* RESET */
+
+/* Reset dimensioni */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* IMPOSTAZIONE CONTAINERS */
-.container{
-    margin: 20px 0;
+/* Immagini */
+img{
+    width: 100%;
+    display: block;
 }
+
+/* IMPOSTAZIONE CONTAINERS */
+
 
 .fluid-container{
     width: 100%;
+}
+
+.tall-container{
+    height: 100%;
+}
+
+.full-container{
+    width: 100%;
+    height: 100%;
 }
 
 /* IMPOSTAZIONE WIDTH E HEIGHT */
