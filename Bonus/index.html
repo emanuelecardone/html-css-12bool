@@ -12,6 +12,9 @@
 </head>
 <body>
 
+    <input class="close-it hidden-mark" type="radio" name="open-close">
+    <input class="open-it hidden-mark" type="radio" name="open-close">
+
     <!--Radio marks non in una label per farli essere siblings del main (cosi da cambiare sfondo al checked)-->
     <input class="white left change-color" type="radio" name="colors" checked="checked">
     <span id="white" class="white left radio-mark"></span>
@@ -25,19 +28,29 @@
     <span id="lime" class="lime radio-mark"></span>
     <i class="far fa-hand-pointer"></i>
 
-    <main class="fluid-container">
-        <div class="fixed cursive">
-            <span class="span-768">Clicca senza rilasciare le scritte nelle col per animarle</span>
-            <span class="span-767">Clicca le scritte!</span>
-            <span class="none">Minimo 500px di altezza!</span>
-        </div>
 
-        <div class="fixed cursive fake-container">
-            <span>Cambia sfondo qui</span>
-        </div>
+
+    <div class="fixed cursive opened">
+        <span class="close">chiudi</span>
+    </div>
+    <div class="fixed cursive closed">
+        <span class="open">apri</span>
+    </div>
+
+    <div class="fixed cursive">
+        <span class="span-768">Clicca senza rilasciare le scritte nelle col per animarle</span>
+        <span class="span-767">Clicca le scritte!</span>
+        <span class="none">Minimo 500px di altezza!</span>
+    </div>
+
+    <div class="fixed cursive fake-container">
+        <span>Cambia sfondo qui</span>
+    </div>
+
+
+    <main class="fluid-container">
 
         <h2>No offset</h2>
-
         <div class="container fluid-container">
             <div class="row">
                 <div class="col-xs-6 col-sm-5 col-md-4 col-lg-2 col-xl-1">

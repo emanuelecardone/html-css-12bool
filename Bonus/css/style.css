@@ -53,7 +53,7 @@ h2{
 }
 
 .fake-container{
-    top: 12.3vh;
+    top: 12.1vh;
     text-align: center;
     justify-content: flex-start;
 }
@@ -66,6 +66,71 @@ h2{
     opacity: 1;
 }
 
+
+/* SEZIONE PER L'APRI/CHIUDI MENU' (usati radio buttons invisibili per renderlo possibile al click e non all'active) */
+.opened,
+.closed{
+    top: 12.1vh;
+    right: 10.05vw;
+    width: 1vw;
+    padding: 0.5vw;
+}
+
+.closed{
+    right: 0; 
+    display: none;
+}
+
+.hidden-mark{
+    width: 1.1vw;
+    min-width: 1.1vw;
+    height: 12vh;
+    min-height: 12vh;
+    position: fixed; 
+    cursor: pointer;
+    z-index: 13;
+    top: 12.1vh;
+    right: 10.05vw;
+    opacity: 0;
+}
+
+.open-it{
+    right: 0;
+    display: none;
+}
+
+.open,
+.close{
+    writing-mode: vertical-lr; /* per scrivere in colonna */
+    text-orientation: upright;  /* per scrivere con le lettere non ruotate */
+    font-size: 1vh; /* perché è scritto verticalmente */
+}
+
+.close-it:checked ~ .fixed,
+.close-it:checked ~ .change-color,
+.close-it:checked ~ .radio-mark,
+.close-it:checked ~ i,
+.close-it:checked{
+    display: none; 
+}
+
+.close-it:checked ~ .closed,
+.close-it:checked + .hidden-mark{
+    display: flex;
+}
+
+.open-it:checked ~ .fixed,
+.open-it:checked ~ .change-color,
+.open-it:checked ~ .radio-mark,
+.open-it:checked ~ i{
+    display: flex; 
+}
+
+.open-it:checked{
+    display: none;
+}
+
+/* SEZIONE RADIOS PER CAMBIO SFONDO E ANIMAZIONI FA-HAND-POINTER */
 .change-color{
     opacity: 0;
     position: fixed;
@@ -453,7 +518,7 @@ i{
     cursor: pointer;
 }
 
-/* ANIMAZIONI */
+/* ANIMAZIONI SCRITTE NELLE COL */
 .main-animation{
     margin-right: 5px;
 }
