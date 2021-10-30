@@ -74,7 +74,7 @@ h2{
     cursor: pointer;
 }
 
-  .radio-mark{
+.radio-mark{
     border-radius: 50%;
     height: 15px;
     width: 15px;                                         
@@ -96,6 +96,9 @@ input.white:checked + #white{
 }
 input.white:checked ~ main{
     background-color: white;
+}
+input.white:checked ~ .fa-hand-pointer{
+    color: white;
 }
 #white{
     z-index: 12;
@@ -120,6 +123,12 @@ input.rainbow:checked ~ main{
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
+input.rainbow:checked ~ .fa-hand-pointer{
+    animation-name: rainbow-color;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
 #rainbow{
     z-index: 12;
     animation-name: make-it-rainbow;
@@ -139,6 +148,9 @@ input.red:checked + #red{
 input.red:checked ~ main{
     background-color: red;
 }
+input.red:checked ~ .fa-hand-pointer{
+    color: red;
+}
 #red{
     z-index: 12;
     background-color: red;
@@ -155,6 +167,9 @@ input.aqua:checked + #aqua{
 input.aqua:checked ~ main{
     background-color: aqua;
 }
+input.aqua:checked ~ .fa-hand-pointer{
+    color: aqua;
+}
 #aqua{
     background-color: aqua;
     top: 17.7vh;
@@ -170,6 +185,9 @@ input.lime:checked + #lime{
 }
 input.lime:checked ~ main{
     background-color: lime;
+}
+input.lime:checked ~ .fa-hand-pointer{
+    color: lime;
 }
 #lime{
     background-color: lime;
@@ -274,11 +292,16 @@ i{
 }
 
 @media screen and (max-height:550px){
-    .fixed,
+    .fake-container,
+    .fixed .span-767,
     .radio-mark,
     .change-color,
     .fa-hand-pointer{
         display: none;
+    }
+
+    span.none{
+        display: inline-block;
     }
 
 }
@@ -296,7 +319,29 @@ i{
     .change-color{
         width: 10px;
         height: 10px;
-    }    
+    }
+    
+    .change-color,
+    .left{
+    right: 2.2vw;
+    }
+
+    .radio-mark,
+    span.left{
+    right: 2.25vw;
+    }
+}
+
+@media screen and (max-width: 768px) and (max-height:1000px){
+    .change-color,
+    .left{
+    right: 1.7vw;
+    }
+
+    .radio-mark,
+    span.left{
+    right: 1.75vw;
+    }
 }
 
 /* IMPOSTAZIONE DEI BOX */
@@ -613,6 +658,40 @@ i{
 
     100%{
         border-color: #ff0000;
+    }    
+}
+
+@keyframes rainbow-color{
+    0%{
+        color: #ff0000;
+    }
+
+    14.28%{
+        color: #ffa500;
+    }
+
+    28.56%{
+        color: #ffff00;
+    }
+
+    42.84%{
+        color: #008000;
+    }
+
+    57.12%{
+        color: #0000ff;
+    }
+
+    71.4%{
+        color: #4b0082;
+    }
+
+    85.68%{
+        color: #ee82ee;
+    }
+
+    100%{
+        color: #ff0000;
     }    
 }
 
