@@ -190,7 +190,8 @@ i{
     z-index: 13;   
 }
 
-.change-color:active ~ i{
+/* Questo selettore farà si che la manina di font awesome si muova solo se clicco su radio che non hanno già il checked */
+.change-color:not(:checked):active ~ i{
      animation-name: virtual-click;
      animation-duration: 0.07s;
      animation-timing-function: linear;
