@@ -13,6 +13,11 @@ img{
     display: block;
 }
 
+/* Bottoni */
+.btn{
+    display: inline-block;
+}
+
 /* TEST */
 
 /* Test singolo */
@@ -39,23 +44,23 @@ body{
 }
 
 /* Colori */
-.red{
+.red-text{
     color: red
 }
 
-.blue{
+.blue-text{
     color: blue;
 }
 
-.green{
+.green-text{
     color: green;
 }
 
-.black{
+.black-text{
     color: black;
 }
 
-.white{
+.white-text{
     color: white;
 }
 
@@ -291,6 +296,66 @@ body{
     height: 25%;
 }
 
+/* APPARENZE */
+.invisible{
+    opacity: 0;
+}
+
+.none{
+    display: none;
+}
+
+/* ANIMAZIONI */
+.appear-disappear{
+    animation-name: appear-disappear;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes appear-disappear{
+    0%{
+        opacity: 0;
+    }
+
+    40%{
+        opacity: 1;
+    }
+
+    60%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+.disappear-appear{
+    animation-name: disappear-appear;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes disappear-appear{
+    0%{
+        opacity: 1;
+    }
+
+    40%{
+        opacity: 0;
+    }
+
+    60%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
 /* IMPOSTAZIONE COMPORTAMENTO ELEMENTI FLEX */
 
 /* Colonne con grandezza statica */
@@ -299,7 +364,7 @@ body{
     flex-shrink: 0;
 }
 
-/* Colonne sempre della stessa grandezza che occupano tutto lo spazio */
+/* Colonne sempre della stessa grandezza tra loro che occupano tutto lo spazio */
 .col{
     flex-grow: 1;
     flex-shrink: 0;
@@ -312,7 +377,7 @@ body{
     flex-shrink: 0;
 }
 
-/* Elementi sempre della stessa grandezza che occupano tutto lo spazio */
+/* Elementi sempre della stessa grandezza tra loro che occupano tutto lo spazio */
 .dynamic{
     flex-grow: 1;
     flex-shrink: 0;

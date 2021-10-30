@@ -1,7 +1,7 @@
 /* COMMON */
 body{
-    /* font-size: 20px; */
     color: white;
+    scroll-behavior: smooth;
 }
 
 h2{
@@ -12,11 +12,269 @@ h2{
     margin: 20px 0;
 }
 
+.container:last-child{
+    margin-bottom: 0;
+}
+
+/* BUTTONS */
+.fixed{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 1vh 1vw;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    max-width: 10vw;
+    width: 10vw;
+    height: 12vh;
+    font-size: 0.8vw;
+    text-align: center;
+    background-image: url(https://besthqwallpapers.com/Uploads/1-10-2019/106594/thumb2-4k-diagonal-wooden-texture-macro-blue-wooden-texture-wooden-backgrounds.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0.95;
+}
+
+.fake-container{
+    top: 12.3vh;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.fake-container span{
+    max-width: 60%;
+}
+
+.fixed span{
+    min-height: 80%;
+    opacity: 1;
+}
+
+.change-color{
+    opacity: 0;
+    position: fixed;
+    right: 2.05vw;
+    z-index: 13;
+    cursor: pointer;
+  }
+
+  .radio-mark{
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;                                         
+    display: inline-block;                               
+    vertical-align: middle;
+    position: fixed;
+    right: 2vw;
+  }
+
+  .left{
+    right: 3.05vw;
+}
+    span.left{
+        right: 3vw;
+    }
+
+  input.white:checked + #white{
+    border: 5px solid white;
+    background-color: black; /* per creare un effetto visivo checked allo span vuoto*/
+  }
+  input.white:checked ~ main{
+    background-color: white;
+  }
+  #white{
+    z-index: 12;
+     background-color: white;
+     top: 16.2vh;
+  }
+  input.white{
+    top: 16.25vh;
+  }
+
+  input.rainbow:checked + #rainbow{
+    border: 5px solid;
+    background-color: black;
+    animation-name: rainbow-border;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+  }
+  input.rainbow:checked ~ main{
+    animation-name: make-it-rainbow;
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  #rainbow{
+    z-index: 12;
+    animation-name: make-it-rainbow;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    top: 19.2vh;
+  }
+  input.rainbow{
+    top: 19.25vh;
+  }
+
+  /* Animazione rainbow */
+  @keyframes make-it-rainbow{
+    0%{
+        background-color: #ff0000;
+    }
+
+    14.28%{
+        background-color: #ffa500;
+    }
+
+    28.56%{
+        background-color: #ffff00;
+    }
+
+    42.84%{
+        background-color: #008000;
+    }
+
+    57.12%{
+        background-color: #0000ff;
+    }
+
+    71.4%{
+        background-color: #4b0082;
+    }
+
+    85.68%{
+        background-color: #ee82ee;
+    }
+
+    99%{
+        border-color: #ee82ee
+    }
+
+    100%{
+        background-color: #ff0000;
+    }
+  }
+
+  @keyframes rainbow-border{
+    0%{
+        border-color: #ff0000;
+    }
+
+    14.28%{
+        border-color: #ffa500;
+    }
+
+    28.56%{
+        border-color: #ffff00;
+    }
+
+    42.84%{
+        border-color: #008000;
+    }
+
+    57.12%{
+        border-color: #0000ff;
+    }
+
+    71.4%{
+        border-color: #4b0082;
+    }
+
+    85.68%{
+        border-color: #ee82ee;
+    }
+
+    99%{
+        border-color: #ee82ee
+    }
+
+    100%{
+        border-color: #ff0000;
+    }    
+  }
+
+  input.red:checked + #red{
+    border: 5px solid red;
+    background-color: black; 
+  }
+  input.red:checked ~ main{
+    background-color: red;
+  }
+  #red{
+    z-index: 12;
+     background-color: red;
+     top: 14.7vh;
+  }
+  input.red{
+    top: 14.75vh;
+  }
+
+  input.aqua:checked + #aqua{
+    border: 5px solid aqua;
+    background-color: black; 
+  }
+  input.aqua:checked ~ main{
+    background-color: aqua;
+  }
+  #aqua{
+    background-color: aqua;
+    top: 17.7vh;
+    z-index: 12;
+ }
+ input.aqua{
+   top: 17.75vh;
+ }
+
+ input.lime:checked + #lime{
+    border: 5px solid lime;
+    background-color: black; 
+  }
+  input.lime:checked ~ main{
+    background-color: lime;
+  }
+  #lime{
+    background-color: lime;
+    top: 20.7vh;
+    z-index: 12;
+ }
+ input.lime{
+   top: 20.75vh;
+ }
+
+ i{
+     position: fixed;
+     z-index: 10;
+     font-size: 1.5vw;
+     top: 15vh;
+     right: 0.5vw;
+     transform: rotate(320deg);
+     z-index: 13;
+ }
+
 /* IMPOSTAZIONE DEI BOX */
 .box{
     background-color: blue;
     border: 1px solid white;
     padding: 10px;
+    position: relative;
+}
+
+.box > .row{
+    width: 100%;
+}
+
+.nested-box{
+    height: 100%;
+    background-color: #00e165;
+    border: 1px solid blue;
+    padding: 25px;
     position: relative;
 }
 
@@ -27,15 +285,12 @@ h2{
         min-height: 200px;
     }
 
-    .container:not(.offset) .row > :not([class$="-12"]){
+    .container:not(.offset) .row > [class^="col-"]{
         margin: 0 auto;
-    } /* Per far stare al centro qualsiasi colonna non larga 12/12 anche nei successivi breakpoints, 
-    così da non lasciare lo spazio a destra completamente vuoto (ad eccezione della sezione offset) 
-    Il margin invece di assegnare un col-12 è per mantenere le proporzioni tra le colonne */
-    
-    .box > .row{
-        width: 100%;
-    }
+    } /* Per far stare al centro qualsiasi colonna non larga 12/12 di una riga anche nei successivi breakpoints 
+    così da non lasciare lo spazio a destra completamente vuoto (ad eccezione della sezione offset). 
+    Il margin invece di assegnare un col-12 è per mantenere le proporzioni tra le colonne 
+    e per non toccare il flex flow dato alla row nel framework */
 
     .nested-box{
         min-height: 200px;
@@ -46,10 +301,18 @@ h2{
     .box{
         min-height: 175px;
     }
+
+    .nested-box{
+        min-height: 175px;
+    }
 }
 
 @media screen and (min-width: 768px){
     .box{
+        min-height: 150px;
+    }
+
+    .nested-box{
         min-height: 150px;
     }
 }
@@ -58,10 +321,18 @@ h2{
     .box{
         min-height: 125px;
     }
+
+    .nested-box{
+        min-height: 125px;
+    }
 }
 
 @media screen and (min-width: 1200px){
     .box{
+        min-height: 100px;
+    }
+
+    .nested-box{
         min-height: 100px;
     }
 }
@@ -70,20 +341,140 @@ h2{
     .box{
         min-height: 75px;
     }
-}
-/* IMPOSTAZIONE NESTED */
-.nested-box{
-    height: 100%;
-    background-color: #00e165;
-    border: 1px solid blue;
-    padding: 25px;
-    position: relative;
+    .nested-box{
+        min-height: 75px;
+    }
 }
 
 /* IMPOSTAZIONE SPAN */
-span{
+.main-span{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+/* ANIMAZIONE */
+.main-animation{
+    margin-right: 5px;
+}
+
+.nested-box .main-animation{
+    margin-left: 5px;
+}
+
+.main-span:active .main-animation{
+    animation-name: main-animation;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.nested-box .main-span:active .main-animation{
+    animation-duration: 5s;
+}
+
+@keyframes main-animation{
+    0%{
+        opacity: 0;
+    }
+
+    15%{
+        opacity: 0;
+    }
+
+    35%{
+        opacity: 1;
+    }
+
+    45%{
+        opacity: 0;
+    }
+
+    65%{
+        opacity: 0;
+    }
+
+    80%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+.main-span:active .animation-combo{
+    animation-name: animation-combo;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.nested-box .main-span:active .animation-combo{
+    animation-duration: 5s;
+}
+
+@keyframes animation-combo{
+    0%{
+        opacity: 0;
+    }
+
+    35%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    65%{
+        opacity: 0;
+    }
+
+    80%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+.nested-box .main-span:active .third-animation-combo{
+    animation-name: third-animation-combo;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes third-animation-combo{
+    0%{
+        opacity: 0;
+    }
+
+    15%{
+        opacity: 1;
+    }
+
+    25%{
+        opacity: 0;
+    }
+
+    45%{
+        opacity: 0;
+    }
+
+    65%{
+        opacity: 0;
+    }
+
+    80%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
 }
