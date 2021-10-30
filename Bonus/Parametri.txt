@@ -35,7 +35,7 @@ Nested: 9/12
 
 ----------------------------------------------------
 
-LG:
+LG: Tutto come da screenshot, ma le col-1 saranno col-2 (height più alta dell'xl)
 
 ----------------------------------------------------
 

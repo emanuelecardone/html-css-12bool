@@ -123,83 +123,6 @@ h2{
     top: 19.25vh;
   }
 
-  /* Animazione rainbow */
-  @keyframes make-it-rainbow{
-    0%{
-        background-color: #ff0000;
-    }
-
-    14.28%{
-        background-color: #ffa500;
-    }
-
-    28.56%{
-        background-color: #ffff00;
-    }
-
-    42.84%{
-        background-color: #008000;
-    }
-
-    57.12%{
-        background-color: #0000ff;
-    }
-
-    71.4%{
-        background-color: #4b0082;
-    }
-
-    85.68%{
-        background-color: #ee82ee;
-    }
-
-    99%{
-        border-color: #ee82ee
-    }
-
-    100%{
-        background-color: #ff0000;
-    }
-  }
-
-  @keyframes rainbow-border{
-    0%{
-        border-color: #ff0000;
-    }
-
-    14.28%{
-        border-color: #ffa500;
-    }
-
-    28.56%{
-        border-color: #ffff00;
-    }
-
-    42.84%{
-        border-color: #008000;
-    }
-
-    57.12%{
-        border-color: #0000ff;
-    }
-
-    71.4%{
-        border-color: #4b0082;
-    }
-
-    85.68%{
-        border-color: #ee82ee;
-    }
-
-    99%{
-        border-color: #ee82ee
-    }
-
-    100%{
-        border-color: #ff0000;
-    }    
-  }
-
   input.red:checked + #red{
     border: 5px solid red;
     background-color: black; 
@@ -249,13 +172,71 @@ h2{
  }
 
  i{
-     position: fixed;
-     z-index: 10;
-     font-size: 1.5vw;
-     top: 15vh;
-     right: 0.5vw;
-     transform: rotate(320deg);
-     z-index: 13;
+    position: fixed;
+    z-index: 10;
+    font-size: 1.5vw;
+    top: 15vh;
+    right: 0.5vw;
+    transform: rotate(320deg);
+    z-index: 13;   
+ }
+
+ .change-color:active ~ i{
+     animation-name: virtual-click;
+     animation-duration: 0.07s;
+     animation-timing-function: linear;
+     animation-iteration-count: 1;
+ }
+
+ @media screen and (max-width: 991px){
+    .fake-container span{
+        display: none;
+    }
+    
+    .fixed{
+        width: 6vw;
+        max-width: 6vw;
+    }
+
+    .left{
+        right: 2.05vw;
+    }
+
+    span.left{
+        right: 2vw;
+    }
+ }
+ @media screen and (max-width: 767px){
+    .fixed{
+        width: 5vw;
+        max-width: 5vw;
+    }
+
+    .change-color,
+    .left{
+       right: 1.35vw;
+    }
+
+    .radio-mark,
+    span.left{
+        right: 1.3vw;
+    }
+
+    .fa-hand-pointer{  
+        display: none;
+    }
+ }
+
+ @media screen and (max-width: 576px){
+    .change-color,
+    .left{
+       right: 1vw;
+    }
+
+    .radio-mark,
+    span.left{
+        right: 1.05vw;
+    }
  }
 
 /* IMPOSTAZIONE DEI BOX */
@@ -366,13 +347,33 @@ h2{
 
 .main-span:active .main-animation{
     animation-name: main-animation;
-    animation-duration: 3.5s;
-    animation-timing-function: linear;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
 
 .nested-box .main-span:active .main-animation{
-    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+
+.main-span:active .animation-combo{
+    animation-name: animation-combo;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.nested-box .main-span:active .animation-combo{
+    animation-timing-function: linear;
+    animation-duration: 3s;
+}
+
+.nested-box .main-span:active .third-animation-combo{
+    animation-name: third-animation-combo;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 @keyframes main-animation{
@@ -381,6 +382,10 @@ h2{
     }
 
     15%{
+        opacity: 0;
+    }
+
+    28%{
         opacity: 0;
     }
 
@@ -405,23 +410,16 @@ h2{
     }
 }
 
-.main-span:active .animation-combo{
-    animation-name: animation-combo;
-    animation-duration: 3.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-.nested-box .main-span:active .animation-combo{
-    animation-duration: 5s;
-}
-
 @keyframes animation-combo{
     0%{
         opacity: 0;
     }
 
     35%{
+        opacity: 0;
+    }
+
+    43%{
         opacity: 0;
     }
 
@@ -442,15 +440,12 @@ h2{
     }
 }
 
-.nested-box .main-span:active .third-animation-combo{
-    animation-name: third-animation-combo;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
 @keyframes third-animation-combo{
     0%{
+        opacity: 0;
+    }
+
+    8%{
         opacity: 0;
     }
 
@@ -478,3 +473,90 @@ h2{
         opacity: 0;
     }
 }
+
+/* Animazione rainbow */
+@keyframes make-it-rainbow{
+    0%{
+        background-color: #ff0000;
+    }
+
+    14.28%{
+        background-color: #ffa500;
+    }
+
+    28.56%{
+        background-color: #ffff00;
+    }
+
+    42.84%{
+        background-color: #008000;
+    }
+
+    57.12%{
+        background-color: #0000ff;
+    }
+
+    71.4%{
+        background-color: #4b0082;
+    }
+
+    85.68%{
+        background-color: #ee82ee;
+    }
+
+    99%{
+        border-color: #ee82ee
+    }
+
+    100%{
+        background-color: #ff0000;
+    }
+  }
+
+  @keyframes rainbow-border{
+    0%{
+        border-color: #ff0000;
+    }
+
+    14.28%{
+        border-color: #ffa500;
+    }
+
+    28.56%{
+        border-color: #ffff00;
+    }
+
+    42.84%{
+        border-color: #008000;
+    }
+
+    57.12%{
+        border-color: #0000ff;
+    }
+
+    71.4%{
+        border-color: #4b0082;
+    }
+
+    85.68%{
+        border-color: #ee82ee;
+    }
+
+    99%{
+        border-color: #ee82ee
+    }
+
+    100%{
+        border-color: #ff0000;
+    }    
+  }
+
+  @keyframes virtual-click{
+      50%{
+        transform: scale(0.5);
+      }
+
+      100%{
+          transform: scale(1);
+      }
+  }
