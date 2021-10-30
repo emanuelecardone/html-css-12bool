@@ -374,6 +374,10 @@ i{
     .nested-box{
         min-height: 125px;
     }
+
+    .nested-box span{
+        white-space: nowrap;
+    }
 }
 
 @media screen and (min-width: 1200px){
