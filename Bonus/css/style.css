@@ -72,7 +72,7 @@ h2{
     right: 2.05vw;
     z-index: 13;
     cursor: pointer;
-  }
+}
 
   .radio-mark{
     border-radius: 50%;
@@ -81,106 +81,106 @@ h2{
     display: inline-block;                               
     position: fixed;
     right: 2vw;
-  }
+}
 
-  .left{
+.left{
     right: 3.05vw;
 }
-    span.left{
-        right: 3vw;
-    }
+span.left{
+    right: 3vw;
+}
 
-  input.white:checked + #white{
+input.white:checked + #white{
     border: 5px solid white;
     background-color: black; /* per creare un effetto visivo checked allo span vuoto*/
-  }
-  input.white:checked ~ main{
+}
+input.white:checked ~ main{
     background-color: white;
-  }
-  #white{
+}
+#white{
     z-index: 12;
-     background-color: white;
-     top: 16.2vh;
-  }
-  input.white{
+    background-color: white;
+    top: 16.2vh;
+}
+input.white{
     top: 16.25vh;
-  }
+}
 
-  input.rainbow:checked + #rainbow{
+input.rainbow:checked + #rainbow{
     border: 5px solid;
     background-color: black;
     animation-name: rainbow-border;
     animation-duration: 3.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite; 
-  }
-  input.rainbow:checked ~ main{
+}
+input.rainbow:checked ~ main{
     animation-name: make-it-rainbow;
     animation-duration: 7s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-  }
-  #rainbow{
+}
+#rainbow{
     z-index: 12;
     animation-name: make-it-rainbow;
     animation-duration: 3.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     top: 19.2vh;
-  }
-  input.rainbow{
+}
+input.rainbow{
     top: 19.25vh;
-  }
+}
 
-  input.red:checked + #red{
+input.red:checked + #red{
     border: 5px solid red;
     background-color: black; 
-  }
-  input.red:checked ~ main{
+}
+input.red:checked ~ main{
     background-color: red;
-  }
-  #red{
+}
+#red{
     z-index: 12;
-     background-color: red;
-     top: 14.7vh;
-  }
-  input.red{
+    background-color: red;
+    top: 14.7vh;
+} 
+input.red{
     top: 14.75vh;
-  }
+}
 
-  input.aqua:checked + #aqua{
+input.aqua:checked + #aqua{
     border: 5px solid aqua;
     background-color: black; 
-  }
-  input.aqua:checked ~ main{
+}
+input.aqua:checked ~ main{
     background-color: aqua;
-  }
-  #aqua{
+}
+#aqua{
     background-color: aqua;
     top: 17.7vh;
     z-index: 12;
- }
- input.aqua{
+}
+input.aqua{
    top: 17.75vh;
- }
+}
 
- input.lime:checked + #lime{
+input.lime:checked + #lime{
     border: 5px solid lime;
     background-color: black; 
-  }
-  input.lime:checked ~ main{
+}
+input.lime:checked ~ main{
     background-color: lime;
-  }
-  #lime{
+}
+#lime{
     background-color: lime;
     top: 20.7vh;
     z-index: 12;
- }
- input.lime{
+}
+input.lime{
    top: 20.75vh;
- }
+}
 
- i{
+i{
     position: fixed;
     z-index: 10;
     font-size: 1.5vw;
@@ -188,16 +188,16 @@ h2{
     right: 0.5vw;
     transform: rotate(320deg);
     z-index: 13;   
- }
+}
 
- .change-color:active ~ i{
+.change-color:active ~ i{
      animation-name: virtual-click;
      animation-duration: 0.07s;
      animation-timing-function: linear;
      animation-iteration-count: 1;
- }
+}
 
- @media screen and (max-width: 991px){
+@media screen and (max-width: 991px){
     .fake-container span{
         display: none;
     }
@@ -214,8 +214,8 @@ h2{
     span.left{
         right: 2vw;
     }
- }
- @media screen and (max-width: 767px){
+}
+@media screen and (max-width: 767px){
     .fixed{
         width: 5vw;
         max-width: 5vw;
@@ -240,9 +240,9 @@ h2{
         display: block;
         font-size: normal;
     }
- }
+}
 
- @media screen and (max-width: 576px){
+@media screen and (max-width: 576px){
     .change-color,
     .left{
     right: 1vw;
@@ -252,9 +252,9 @@ h2{
     span.left{
     right: 1.05vw;
     }
- }
+}
 
- @media screen and (max-height:900px){
+@media screen and (max-height:900px){
     .span-768{  
         display: none;
     }
@@ -264,15 +264,15 @@ h2{
         font-size: medium;
         white-space: normal;
     }        
- }
+}
 
- @media screen and (max-height:700px){
+@media screen and (max-height:700px){
      .fixed .span-767{
         font-size: small;
     }
- }
+}
 
- @media screen and (max-height:550px){
+@media screen and (max-height:550px){
     .fixed,
     .radio-mark,
     .change-color,
@@ -282,21 +282,21 @@ h2{
 
 }
 
- @media screen and (max-width: 1000px) and (max-height:900px){
+@media screen and (max-width: 1000px) and (max-height:900px){
     .fixed .span-767{
         transform: rotate(270deg);
         white-space: nowrap;
         font-size: 1vh;
     }       
- }
+}
 
- @media screen and (max-width: 991px) and (max-height:1000px){
+@media screen and (max-width: 991px) and (max-height:1000px){
     .radio-mark,
     .change-color{
         width: 10px;
         height: 10px;
     }    
- }
+}
 
 /* IMPOSTAZIONE DEI BOX */
 .box{
@@ -316,6 +316,14 @@ h2{
     border: 1px solid blue;
     padding: 25px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nested-box span{
+    display: inline-block; /* Per farlo andare a capo se non ha spazio */
+    text-align: center;
 }
 
 @media screen and (min-width: 500px){
@@ -567,7 +575,7 @@ h2{
     100%{
         background-color: #ff0000;
     }
-  }
+}
 
   @keyframes rainbow-border{
     0%{
@@ -601,15 +609,15 @@ h2{
     100%{
         border-color: #ff0000;
     }    
-  }
+}
 
   @keyframes virtual-click{
-      50%{
+    50%{
         transform: scale(0.5);
-      }
+    }
 
-      100%{
-          transform: scale(1);
-      }
-  }
+    100%{
+        transform: scale(1);
+    }
+}
   
