@@ -29,10 +29,9 @@ h2{
     max-width: 10vw;
     width: 10vw;
     height: 12vh;
-    min-height: 12vh;
     font-size: 0.8vw;
     text-align: center;
-    background-image: url(https://besthqwallpapers.com/Uploads/1-10-2019/106594/thumb2-4k-diagonal-wooden-texture-macro-blue-wooden-texture-wooden-backgrounds.jpg);
+    background-image: url(../img/Blue\ wood.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -47,6 +46,9 @@ h2{
     right: 0;
     text-align: center;
     justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 2vh;
+    min-height: 12vh;
 }
 
 .fake-container span{
@@ -57,39 +59,51 @@ h2{
     opacity: 1;
 }
 
+.hidden-mark{
+    position: fixed; 
+    cursor: pointer;
+    z-index: 13;
+    opacity: 0;
+}
+
+.first-group{
+    display: inline-block;
+}
+
+.second-group{
+    display: none;
+}
 
 /* SEZIONE PER L'APRI/CHIUDI MENU' (usati radio buttons invisibili per renderlo possibile al click e non all'active) */
 
 /*I buttons invisibili sono grandi esattamente come i div,
 hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
+
+.minimize{
+    width: 1.1vw;
+    min-width: 1.1vw;
+    height: 12vh;
+    min-height: 12vh;
+    top: 12.1vh;
+    right: 10.05vw;
+}
+
+.open-it{
+    right: 0;
+    display: none;
+}
+
 .opened,
 .closed{
     top: 12.1vh;
     right: 10.05vw;
     width: 1vw;
     padding: 0.5vw;
+    min-height: 12vh;
 }
 
 .closed{
     right: 0; 
-    display: none;
-}
-
-.hidden-mark{
-    width: 1.1vw;
-    min-width: 1.1vw;
-    height: 12vh;
-    min-height: 12vh;
-    position: fixed; 
-    cursor: pointer;
-    z-index: 13;
-    top: 12.1vh;
-    right: 10.05vw;
-    opacity: 0;
-}
-
-.open-it{
-    right: 0;
     display: none;
 }
 
@@ -100,11 +114,47 @@ hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
     font-size: 1vh; /* perché è scritto verticalmente */
 }
 
-/* Chiusura menù */
+
+
+
+/* SEZIONE CAMBIO PAGINA DEGLI SFONDI */
+
+.switch{
+    width: 4.1vw;
+    min-width: 4.1vw;
+    height: 3vh;
+    min-height: 3vh;
+    top: 21.1vh;
+    right: 6vw;
+}
+
+.second-button{
+    display: none;
+}
+
+.page-1,
+.page-2{
+    top: 21.1vh;
+    right: 6vw;
+    width: 4vw;
+    height: 3vh;
+    padding: 0.5vw;
+    z-index: 12;
+    white-space: nowrap;
+    background: none;
+} 
+
+.page-2{
+    display: none;
+} 
+
+.go-page-1,
+.go-page-2{ 
+    font-size: 0.4vw; /* perché è scritto orizzontalmente */
+} 
+
+/* Chiusura menù - parte 1*/
 .close-it:checked ~ .fixed,
-.close-it:checked ~ .change-color,
-.close-it:checked ~ .radio-mark,
-.close-it:checked ~ i,
 .close-it:checked{
     display: none; 
 } 
@@ -112,28 +162,71 @@ hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
 dato che i 2 radio hanno lo stesso nome, agiscono come gruppo e un radio annulla l'altro.
 in questo modo posso farlo tornare nel display anche se nell'index non segue "Apri" 
 e non posso selezionarlo con ~ o + per ridargli il display col secondo pulsante */
-
 .close-it:checked ~ .closed,
 .close-it:checked + .hidden-mark{
     display: flex;
 }
 
+.close-it:checked ~ i{
+    opacity: 0;
+}/* Se davo un "display none" rifaceva l'animazione del click ogni volta che cliccavo "Apri" e tornava in display 
+visto che c'è sempre un checked del colore attivo */
+
 /* Apertura menù */
-.open-it:checked ~ .fixed,
-.open-it:checked ~ .change-color,
-.open-it:checked ~ .radio-mark,
-.open-it:checked ~ i{
+/* i div .page torneranno automaticamente display flex (dato dalla classe .fixed) appena finisce il checked a "Chiudi"
+non seleziono i .page perché se faccio chiudi/apri come prima azione compariranno sovrapposti in quanto page-1 non ha ancora dato "display none" a page-2 
+cosi il browser leggerà in automatico il comportamento del gruppo switch senza interferenze da parte di open/close,
+non seleziono .closed (cioè il div con la scritta "Apri") perché anche lui è fixed e il suo stesso radio gli darebbe il display invece che nasconderlo */
+.open-it:checked ~ .fixed:not(.page, .closed),
+
+.open-it:checked ~ i
+.open-it:checked ~ .switch{
     display: flex; 
 }
 /* ora che "Chiudi" non è più checked tornerà visibile poiché si annulla il "display none" */
-
-.open-it:checked{
+.open-it:checked ~ .closed{
     display: none;
 }
-/* "Chiudi" va in "display none" al suo checked, poi tornerà in "display flex" al successivo checked di "Apri"
+/* "Apri" tornerà in display none in automatico poiché si annulla il checked di "Chiudi" che lo rendeva display flex */
 
+
+/* Spostamento a pagina 2 */
+.first-button:checked ~ .first-group,
+.first-button:checked ~ .page-1,
+.first-button:checked{
+    display: none; 
+} 
+.first-button:checked ~ .second-group,
+.first-button:checked ~ .page-2,
+.first-button:checked + .hidden-mark{
+    display: flex;
+}
+
+/* Ritorno a pagina 1 */
+.second-button:checked ~ .first-group,
+.second-button:checked ~ .page-1,
+.second-button:checked ~ .second-button{
+    display: flex; 
+}
+.second-button:checked ~ .page-2,
+.second-button:checked ~ .second-group{
+    display: none;
+}
+
+/* Chiusura menù - parte 2*/
+/* Questo selettore della sezione open/close DEVE restare ultimo dopo tutti i checked del switch page.
+sarà sempre l'ultimo ad essere letto per le interazioni con gli elementi in comune tra i gruppi open/close e switch
+e sovrascriverà tutti i display flex del gruppo switch per far si che tutto possa diventare "display block" quando clicco "Chiudi" */
+.close-it:checked ~ .change-color,
+.close-it:checked ~ .radio-mark,
+.close-it:checked ~ .switch,
+.close-it:checked ~ .page{
+    display: none;
+}
 
 /* SEZIONE RADIOS PER CAMBIO SFONDO E ANIMAZIONI FA-HAND-POINTER */
+
+/* Comune per input radios e span vuoti */
 .change-color{
     opacity: 0;
     position: fixed;
@@ -144,8 +237,7 @@ e non posso selezionarlo con ~ o + per ridargli il display col secondo pulsante 
 .radio-mark{
     border-radius: 50%;
     height: 15px;
-    width: 15px;                                         
-    display: inline-block;                               
+    width: 15px;                                                                       
     position: fixed;
 }
 
@@ -172,6 +264,9 @@ span.right{
     right: 1vw;
 }
 
+/* Cambi di colore al main, radios e fa-hand-pointer con animazione rainbow inclusa */
+
+/* Primo gruppo radios */
 input.white:checked + #white{
     border: 5px solid white;
     background-color: black; /* per creare un effetto visivo checked allo span vuoto*/
@@ -180,6 +275,7 @@ input.white:checked ~ main{
     background-color: white;
 }
 input.white:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 up-left-virtual-click;
     transform: rotate(320deg);
     color: white;
 }
@@ -192,34 +288,21 @@ input.white{
     top: 16.25vh;
 }
 
-/* Cambi di colore al main, radios e fa-hand-pointer con animazione rainbow inclusa */
 input.rainbow:checked + #rainbow{
     border: 5px solid;
     background-color: black;
-    animation-name: rainbow-border;
-    animation-duration: 3.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite; 
+    animation: 3.5s linear infinite rainbow-border;
 }
 input.rainbow:checked ~ main{
-    animation-name: make-it-rainbow;
-    animation-duration: 7s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: 7s linear infinite make-it-rainbow;
 }
 input.rainbow:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 down-left-virtual-click, 3.5s linear infinite rainbow-color;
     transform: rotate(230deg);
-    animation-name: rainbow-color;
-    animation-duration: 3.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
+} 
 #rainbow{
     z-index: 12;
-    animation-name: make-it-rainbow;
-    animation-duration: 3.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: 3.5s linear infinite make-it-rainbow;
     top: 19.2vh;
 }
 input.rainbow{
@@ -234,6 +317,7 @@ input.red:checked ~ main{
     background-color: red;
 }
 input.red:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 up-virtual-click;
     transform: rotate(10deg);
     color: red;
 }
@@ -254,6 +338,7 @@ input.aqua:checked ~ main{
     background-color: aqua;
 }
 input.aqua:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 up-right-virtual-click;
     transform: rotate(60deg);
     color: aqua;
 }
@@ -274,6 +359,7 @@ input.lime:checked ~ main{
     background-color: lime;
 }
 input.lime:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 down-virtual-click;
     transform: rotate(185deg);
     color: lime;
 }
@@ -294,6 +380,7 @@ input.violet:checked ~ main{
     background-color: violet;
 }
 input.violet:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 down-right-virtual-click;
     transform: rotate(145deg);
     color: violet;
 }
@@ -307,6 +394,30 @@ input.violet{
    top: 19.25vh;
 }
 
+/* Secondo gruppo radios */
+input.golden:checked + #golden{
+    border: 5px solid #ffd700;
+    background-color: black;
+}
+input.golden:checked ~ main{
+    background-color: #ffd700;
+}
+input.golden:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 down-left-virtual-click-2;
+    transform: rotate(230deg);
+    color: #ffd700;
+}
+#golden{
+    background-color: #ffd700;
+    top: 20.7vh;
+    z-index: 12;
+    top: 19.2vh;
+}
+input.golden{
+   top: 19.25vh;
+}
+
+/* Fa-hand-pointer */
 i{
     position: fixed;
     z-index: 10;
@@ -316,18 +427,6 @@ i{
     transform: rotate(320deg);
     z-index: 13;   
 }
-
-/* Animazione della fa-hand-pointer*/
-.change-color:not(:checked):active ~ i{
-    animation-name: virtual-click;
-    animation-duration: 0.07s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-}
-/* Questo selettore farà si che la fa-hand-pointer si muova solo se clicco su radio che non hanno già il checked.
-l'animazione del movimento della fa-hand-pointer è con l'active, quella del colore col checked 
-quindi nessuna delle due animazioni sovrascrive l'altra
-e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
 
 
 /* RESPONSIVE PER IL MENU' (width e height)*/
@@ -763,13 +862,132 @@ e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
     }    
 }
 
-  @keyframes virtual-click{
+/* Necessario fare 2 animazioni diverse per primo e secondo gruppo altrimenti funzionerà solo se la fa-hand cambia direzione
+ma se la direzione non cambia starei facendo partire la stessa animazione 2 volte e funzionerebbe solo la prima volta */
+
+@keyframes up-left-virtual-click{
     50%{
-        transform: scale(0.5);
+        transform: scale(0.5) rotate(320deg);
     }
 
     100%{
-        transform: scale(1);
+        transform: scale(1) rotate(320deg);
     }
 }
+
+@keyframes up-left-virtual-click-2{
+    50%{
+        transform: scale(0.5) rotate(320deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(320deg);
+    }
+}
+
+@keyframes up-virtual-click{
+    50%{
+        transform: scale(0.5) rotate(10deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(10deg);
+    }
+}
+
+@keyframes up-virtual-click-2{
+    50%{
+        transform: scale(0.5) rotate(10deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(10deg);
+    }
+}
+
+@keyframes up-right-virtual-click{
+    50%{
+        transform: scale(0.5) rotate(60deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(60deg);
+    }
+}
+
+@keyframes up-right-virtual-click-2{
+    50%{
+        transform: scale(0.5) rotate(60deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(60deg);
+    }
+}
+
+@keyframes down-right-virtual-click{
+    50%{
+        transform: scale(0.5) rotate(145deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(145deg);
+    }
+}
+
+@keyframes down-right-virtual-click-2{
+    50%{
+        transform: scale(0.5) rotate(145deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(145deg);
+    }
+}
+
+@keyframes down-virtual-click{
+    50%{
+        transform: scale(0.5) rotate(185deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(185deg);
+    }
+}
+
+@keyframes down-virtual-click-2{
+    50%{
+        transform: scale(0.5) rotate(185deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(185deg);
+    }
+}
+
+@keyframes down-left-virtual-click{
+    50%{
+        transform: scale(0.5) rotate(230deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(230deg);
+    }
+}
+
+@keyframes down-left-virtual-click-2{
+    50%{
+        transform: scale(0.5) rotate(230deg);
+    }
+
+    100%{
+        transform: scale(1) rotate(230deg);
+    }
+}
+
+
+  
+  
+  
+  
   
