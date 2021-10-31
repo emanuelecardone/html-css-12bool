@@ -16,6 +16,30 @@ h2{
     margin-bottom: 0;
 }
 
+/* Comparsa iniziale body effetto overlay*/
+.body-overlay{
+    opacity: 1;
+    animation: 0.3s linear 1 body-appears;
+    z-index: 0;
+    opacity: 0;
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* HOVER (bold all'hover)*/
+.change-color:hover ~ .fake-container,
+.radio-mark:hover ~ .fake-container,
+.fa-hand-pointer:hover ~ .fake-container,
+.fake-container:hover,
+.minimize:hover ~ .close-menu,
+.switch:hover ~ .page{
+    font-weight: bold;
+}
+
 /* BUTTONS */
 
 /* Caratteristiche comuni per gli elementi fixed sulla destra */
@@ -148,7 +172,9 @@ hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
     display: none;
 } 
 
-.go-page-1,
+.go-page-1{
+    font-size: 0.35vw;
+}
 .go-page-2{ 
     font-size: 0.4vw; /* perché è scritto orizzontalmente */
 } 
@@ -176,9 +202,8 @@ visto che c'è sempre un checked del colore attivo */
 /* i div .page torneranno automaticamente display flex (dato dalla classe .fixed) appena finisce il checked a "Chiudi"
 non seleziono i .page perché se faccio chiudi/apri come prima azione compariranno sovrapposti in quanto page-1 non ha ancora dato "display none" a page-2 
 cosi il browser leggerà in automatico il comportamento del gruppo switch senza interferenze da parte di open/close,
-non seleziono .closed (cioè il div con la scritta "Apri") perché anche lui è fixed e il suo stesso radio gli darebbe il display invece che nasconderlo */
+non seleziono .closed (cioè il div con la scritta "Apri") perché anche lui è .fixed e il suo stesso radio gli darebbe il display invece che nasconderlo */
 .open-it:checked ~ .fixed:not(.page, .closed),
-
 .open-it:checked ~ i
 .open-it:checked ~ .switch{
     display: flex; 
@@ -216,7 +241,7 @@ non seleziono .closed (cioè il div con la scritta "Apri") perché anche lui è 
 /* Chiusura menù - parte 2*/
 /* Questo selettore della sezione open/close DEVE restare ultimo dopo tutti i checked del switch page.
 sarà sempre l'ultimo ad essere letto per le interazioni con gli elementi in comune tra i gruppi open/close e switch
-e sovrascriverà tutti i display flex del gruppo switch per far si che tutto possa diventare "display block" quando clicco "Chiudi" */
+e sovrascriverà tutti i display flex del gruppo switch per far si che tutto possa diventare "display none" quando clicco "Chiudi" */
 .close-it:checked ~ .change-color,
 .close-it:checked ~ .radio-mark,
 .close-it:checked ~ .switch,
@@ -751,7 +776,10 @@ i{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    cursor: pointer;
+}
+
+.main-span span{
+    opacity: 0;
 }
 
 /* ANIMAZIONI SCRITTE NELLE COL */
@@ -763,25 +791,19 @@ i{
     margin-left: 5px;
 }
 
-.main-span .main-animation{
-    animation-name: main-animation;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+.main-span .main-animation:not(.animation){
+    animation: 5s linear infinite main-animation;
+    animation-delay: 0.5s;
 }
 
-.main-span .animation-combo{
-    animation-name: animation-combo;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+.main-span .animation-combo:not(.animation){
+    animation: 5s linear infinite animation-combo;
+    animation-delay: 0.5s;
 }
 
 .nested-box .third-animation-combo{
-    animation-name: third-animation-combo;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: 5s linear infinite third-animation-combo;
+    animation-delay: 0.5s;
 }
 
 /* Animazioni span */
@@ -1109,9 +1131,22 @@ ma se la direzione non cambia starei facendo partire la stessa animazione 2 volt
     }
 }
 
+/* Comparsa iniziale body */
+@keyframes body-appears{
+    0%{
+        opacity: 1;
+        z-index: 20;
+    }
 
-  
-  
+    99.99%{
+        z-index: 20;
+        opacity: 0;
+    }
+
+    100%{
+        z-index: 0;
+    }
+}
   
   
   

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="body-overlay"> </div>
     <!-- L'ordine a cascata è strutturato in modo che ogni elemento si trovi dopo quello che gli darà un effetto -->
 
     <!-- PULSANTI APRI/CHIUDI MENU' -->
@@ -30,10 +31,10 @@
     <!-- CONTAINERS DEI CONTENUTI DEL MENU' -->
 
     <!-- Span apri/chiudi  -->
-    <div class="fixed cursive opened">
+    <div class="fixed cursive close-menu opened">
         <span class="close">chiudi</span>
     </div>
-    <div class="fixed cursive closed">
+    <div class="fixed cursive close-menu closed">
         <span class="open">apri</span>
     </div>
 
@@ -79,7 +80,7 @@
     <i class="far fa-hand-pointer"></i>
 
     <!-- Questo div è un fake container dei radios per i colori (posizionati con top e right) 
-    per fari si che i radio siano siblings del main ed ottenere l'effetto visivo che stiano dentro al box fixed -->
+    per fari si che i radio siano siblings del main ed ottenere l'effetto visivo che stiano dentro al fake container -->
     <div class="fixed cursive fake-container">
         <span>Cambia sfondo</span>
     </div>
