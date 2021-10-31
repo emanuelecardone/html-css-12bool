@@ -325,7 +325,7 @@ e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
         right: 1.3vw;
     }
 
-    .fa-tint,{  
+    .fa-tint{  
         display: none;
     }
 }
