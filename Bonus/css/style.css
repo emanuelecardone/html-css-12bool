@@ -380,11 +380,6 @@ e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
    .fa-tint{
        display: none;
    }
-
-   span.none{
-       display: inline-block;
-   }
-
 }
 
 /* IMPOSTAZIONE DEI BOX */
