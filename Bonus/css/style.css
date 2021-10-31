@@ -386,7 +386,6 @@ input.violet:checked ~ .fa-hand-pointer{
 }
 #violet{
     background-color: violet;
-    top: 20.7vh;
     z-index: 12;
     top: 19.2vh;
 }
@@ -409,11 +408,136 @@ input.golden:checked ~ .fa-hand-pointer{
 }
 #golden{
     background-color: #ffd700;
-    top: 20.7vh;
     z-index: 12;
     top: 19.2vh;
 }
 input.golden{
+   top: 19.25vh;
+}
+
+input.silver:checked + #silver{
+    border: 5px solid #d2d9db;
+    background-color: black;
+}
+input.silver:checked ~ main{
+    background-color: #d2d9db;
+}
+input.silver:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 up-left-virtual-click-2;
+    transform: rotate(320deg);
+    color: #d2d9db;
+}
+#silver{
+    background-color: #d2d9db;
+    z-index: 12;
+    top: 16.2vh;
+}
+input.silver{
+   top: 16.25vh;
+}
+
+input.bronze:checked + #bronze{
+    border: 5px solid #CD7F32;
+    background-color: black;
+}
+input.bronze:checked ~ main{
+    background-color: #990000;
+}
+input.bronze:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 up-virtual-click-2;
+    transform: rotate(10deg);
+    color: #CD7F32;
+}
+#bronze{
+    background-color: #CD7F32;
+    z-index: 12;
+    top: 14.7vh;
+}
+input.bronze{
+   top: 14.75vh;
+}
+
+input.bronze:checked + #bronze{
+    border: 5px solid #CD7F32;
+    background-color: black;
+}
+input.bronze:checked ~ main{
+    background-color: #CD7F32;
+}
+input.bronze:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 up-virtual-click-2;
+    transform: rotate(10deg);
+    color: #CD7F32;
+}
+#bronze{
+    background-color: #CD7F32;
+    z-index: 12;
+    top: 14.7vh;
+}
+input.bronze{
+   top: 14.75vh;
+}
+
+input.lilla:checked + #lilla{
+    border: 5px solid #C9BEFE;
+    background-color: black;
+}
+input.lilla:checked ~ main{
+    background-color: #C9BEFE;
+}
+input.lilla:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 down-virtual-click-2;
+    transform: rotate(185deg);
+    color: #C9BEFE;
+}
+#lilla{
+    background-color: #C9BEFE;
+    z-index: 12;
+    top: 20.7vh;
+}
+input.lilla{
+   top: 20.75vh;
+}
+
+input.emerald:checked + #emerald{
+    border: 5px solid #50C8B4;
+    background-color: black;
+}
+input.emerald:checked ~ main{
+    background-color: #50C8B4;
+}
+input.emerald:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 up-right-virtual-click-2;
+    transform: rotate(60deg);
+    color: #50C8B4;
+}
+#emerald{
+    background-color: #50C8B4;
+    z-index: 12;
+    top: 16.2vh;
+}
+input.emerald{
+   top: 16.25vh;
+}
+
+input.lapis:checked + #lapis{
+    border: 5px solid #638ac7;
+    background-color: black;
+}
+input.lapis:checked ~ main{
+    background-color: #638ac7;
+}
+input.lapis:checked ~ .fa-hand-pointer{
+    animation: 0.07s linear 1 down-right-virtual-click-2;
+    transform: rotate(145deg);
+    color: #638ac7;
+}
+#lapis{
+    background-color: #638ac7;
+    z-index: 12;
+    top: 19.2vh;
+}
+input.lapis{
    top: 19.25vh;
 }
 
