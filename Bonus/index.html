@@ -12,10 +12,14 @@
 </head>
 <body>
 
+    <!-- L'ordine a cascata è strutturato in modo che ogni elemento si trovi dopo quello che gli darà un effetto -->
+
+    <!-- PULSANTI APRI/CHIUDI MENU' -->
     <input class="close-it hidden-mark" type="radio" name="open-close">
     <input class="open-it hidden-mark" type="radio" name="open-close">
 
-    <!--Radio marks non in una label per farli essere siblings del main (cosi da cambiare sfondo al checked)-->
+    <!-- PULSANTI CAMBIO SFONDO E ANIMAZIONE FA-HAND-POINTER -->
+    <!-- Radio marks fuori dal main per farli essere siblings del main (cosi da cambiare sfondo al checked) -->
     <input class="white left change-color" type="radio" name="colors" checked="checked">
     <span id="white" class="white left radio-mark"></span>
     <input class="rainbow left change-color" type="radio" name="colors">
@@ -29,7 +33,7 @@
     <i class="far fa-hand-pointer"></i>
 
 
-
+    <!-- CONTAINERS DEI CONTENUTI DEL MENU' (più span fuori dal display iniziale per i vari responsive) -->
     <div class="fixed cursive opened">
         <span class="close">chiudi</span>
     </div>
@@ -47,9 +51,10 @@
         <span>Cambia sfondo qui</span>
     </div>
 
-
+    <!-- MAIN -->
     <main class="fluid-container">
 
+        <!-- SEZIONE NO OFFSET -->
         <h2>No offset</h2>
         <div class="container fluid-container">
             <div class="row">
@@ -279,6 +284,7 @@
             </div>
         </div>
 
+        <!-- SEZIONE OFFSET -->
         <h2>Offset</h3>
 
         <div class="container fluid-container offset">

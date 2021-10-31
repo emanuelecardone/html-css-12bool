@@ -17,6 +17,8 @@ h2{
 }
 
 /* BUTTONS */
+
+/* Caratteristiche comuni per gli elementi fixed sulla destra */
 .fixed{
     position: fixed;
     top: 0;
@@ -68,6 +70,8 @@ h2{
 
 
 /* SEZIONE PER L'APRI/CHIUDI MENU' (usati radio buttons invisibili per renderlo possibile al click e non all'active) */
+
+/*I buttons invisibili sono grandi esattamente come i div, hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
 .opened,
 .closed{
     top: 12.1vh;
@@ -106,19 +110,25 @@ h2{
     font-size: 1vh; /* perché è scritto verticalmente */
 }
 
+/* Chiusura menù */
 .close-it:checked ~ .fixed,
 .close-it:checked ~ .change-color,
 .close-it:checked ~ .radio-mark,
 .close-it:checked ~ i,
 .close-it:checked{
     display: none; 
-}
+} 
+/* il display none del radio button stesso si annullerà alla fine del suo checked una volta che clicco l'altro radio,
+dato che i 2 radio agiscono come gruppo e un radio annulla l'altro.
+in questo modo posso farlo tornare nel display anche se nell'index non segue "Apri" 
+e non posso selezionarlo con ~ o + per ridargli il display col secondo pulsante */
 
 .close-it:checked ~ .closed,
 .close-it:checked + .hidden-mark{
     display: flex;
 }
 
+/* Apertura menù */
 .open-it:checked ~ .fixed,
 .open-it:checked ~ .change-color,
 .open-it:checked ~ .radio-mark,
