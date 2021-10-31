@@ -71,7 +71,8 @@ h2{
 
 /* SEZIONE PER L'APRI/CHIUDI MENU' (usati radio buttons invisibili per renderlo possibile al click e non all'active) */
 
-/*I buttons invisibili sono grandi esattamente come i div, hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
+/*I buttons invisibili sono grandi esattamente come i div,
+hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
 .opened,
 .closed{
     top: 12.1vh;
@@ -118,8 +119,8 @@ h2{
 .close-it:checked{
     display: none; 
 } 
-/* il display none del radio button stesso si annullerà alla fine del suo checked una volta che clicco l'altro radio,
-dato che i 2 radio agiscono come gruppo e un radio annulla l'altro.
+/* il "display none" del radio button stesso si annullerà alla fine del suo checked una volta che clicco l'altro radio,
+dato che i 2 radio hanno lo stesso nome, agiscono come gruppo e un radio annulla l'altro.
 in questo modo posso farlo tornare nel display anche se nell'index non segue "Apri" 
 e non posso selezionarlo con ~ o + per ridargli il display col secondo pulsante */
 
@@ -135,12 +136,15 @@ e non posso selezionarlo con ~ o + per ridargli il display col secondo pulsante 
 .open-it:checked ~ i{
     display: flex; 
 }
+/* ora che "Chiudi" non è più checked tornerà visibile poiché si annulla il "display none" */
 
 .open-it:checked{
     display: none;
 }
+/* "Chiudi" va in "display none" al suo checked, poi tornerà in "display flex" al successivo checked di "Apri"
 
-/* SEZIONE RADIOS PER CAMBIO SFONDO E ANIMAZIONI FA-HAND-POINTER */
+
+/* SEZIONE RADIOS PER CAMBIO SFONDO E ANIMAZIONI FA-TINT */
 .change-color{
     opacity: 0;
     position: fixed;
@@ -172,7 +176,7 @@ input.white:checked + #white{
 input.white:checked ~ main{
     background-color: white;
 }
-input.white:checked ~ .fa-hand-pointer{
+input.white:checked ~ .fa-tint{
     color: white;
 }
 #white{
@@ -184,6 +188,7 @@ input.white{
     top: 16.25vh;
 }
 
+/* Cambi di colore al main, radios e fa-tint con animazione rainbow inclusa */
 input.rainbow:checked + #rainbow{
     border: 5px solid;
     background-color: black;
@@ -198,7 +203,7 @@ input.rainbow:checked ~ main{
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-input.rainbow:checked ~ .fa-hand-pointer{
+input.rainbow:checked ~ .fa-tint{
     animation-name: rainbow-color;
     animation-duration: 3.5s;
     animation-timing-function: linear;
@@ -223,7 +228,7 @@ input.red:checked + #red{
 input.red:checked ~ main{
     background-color: red;
 }
-input.red:checked ~ .fa-hand-pointer{
+input.red:checked ~ .fa-tint{
     color: red;
 }
 #red{
@@ -242,7 +247,7 @@ input.aqua:checked + #aqua{
 input.aqua:checked ~ main{
     background-color: aqua;
 }
-input.aqua:checked ~ .fa-hand-pointer{
+input.aqua:checked ~ .fa-tint{
     color: aqua;
 }
 #aqua{
@@ -261,7 +266,7 @@ input.lime:checked + #lime{
 input.lime:checked ~ main{
     background-color: lime;
 }
-input.lime:checked ~ .fa-hand-pointer{
+input.lime:checked ~ .fa-tint{
     color: lime;
 }
 #lime{
@@ -279,18 +284,21 @@ i{
     font-size: 1.5vw;
     top: 15vh;
     right: 0.5vw;
-    transform: rotate(320deg);
+    /* transform: rotate(320deg); */
     z-index: 13;   
 }
 
-/* Questo selettore farà si che la manina di font awesome si muova solo se clicco su radio che non hanno già il checked */
+/* Animazione della fa-tint*/
 .change-color:not(:checked):active ~ i{
-     animation-name: virtual-click;
-     animation-duration: 0.07s;
-     animation-timing-function: linear;
-     animation-iteration-count: 1;
+    animation-name: virtual-click;
+    animation-duration: 0.07s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
+/* Questo selettore farà si che la goccia di font awesome si muova solo se clicco su radio che non hanno già il checked */
 
+
+/* RESPONSIVE PER IL MENU' (width e height)*/
 @media screen and (max-width: 991px){
     .fake-container span{
         display: none;
@@ -325,7 +333,7 @@ i{
         right: 1.3vw;
     }
 
-    .fa-hand-pointer,
+    .fa-tint,
     .span-768{  
         display: none;
     }
@@ -366,12 +374,12 @@ i{
     }
 }
 
-@media screen and (max-height:550px){
+@media screen and (max-height:500px){
     .fake-container,
     .fixed .span-767,
     .radio-mark,
     .change-color,
-    .fa-hand-pointer{
+    .fa-tint{
         display: none;
     }
 

@@ -18,7 +18,7 @@
     <input class="close-it hidden-mark" type="radio" name="open-close">
     <input class="open-it hidden-mark" type="radio" name="open-close">
 
-    <!-- PULSANTI CAMBIO SFONDO E ANIMAZIONE FA-HAND-POINTER -->
+    <!-- PULSANTI CAMBIO SFONDO E ANIMAZIONE FA-TINT -->
     <!-- Radio marks fuori dal main per farli essere siblings del main (cosi da cambiare sfondo al checked) -->
     <input class="white left change-color" type="radio" name="colors" checked="checked">
     <span id="white" class="white left radio-mark"></span>
@@ -30,7 +30,7 @@
     <span id="aqua" class="aqua radio-mark"></span>
     <input class="lime change-color" type="radio" name="colors">
     <span id="lime" class="lime radio-mark"></span>
-    <i class="far fa-hand-pointer"></i>
+    <i class="fas fa-tint"></i>
 
 
     <!-- CONTAINERS DEI CONTENUTI DEL MENU' (più span fuori dal display iniziale per i vari responsive) -->
@@ -47,6 +47,8 @@
         <span class="none">Minimo 500px di altezza!</span>
     </div>
 
+    <!-- Questo div è un fake container dei radios per i colori (posizionati con top e right) 
+    per fari si che i radio siano siblings del main ed ottenere l'effetto visivo che stiano dentro al box fixed -->
     <div class="fixed cursive fake-container">
         <span>Cambia sfondo qui</span>
     </div>
