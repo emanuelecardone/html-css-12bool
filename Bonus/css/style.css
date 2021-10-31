@@ -21,8 +21,6 @@ h2{
 /* Caratteristiche comuni per gli elementi fixed sulla destra */
 .fixed{
     position: fixed;
-    top: 0;
-    right: 0;
     z-index: 10;
     padding: 1vh 1vw;
     border: 2px solid white;
@@ -44,18 +42,9 @@ h2{
     opacity: 0.95;
 }
 
-.span-767{
-    transform: rotate(270deg);
-    display: none;
-    align-self: flex-end;
-    text-align: center;
-    margin: auto;
-    white-space: nowrap;
-    font-size: 1.5vw;
-}
-
 .fake-container{
     top: 12.1vh;
+    right: 0;
     text-align: center;
     justify-content: flex-start;
 }
@@ -295,7 +284,10 @@ i{
     animation-timing-function: linear;
     animation-iteration-count: 1;
 }
-/* Questo selettore farà si che la goccia di font awesome si muova solo se clicco su radio che non hanno già il checked */
+/* Questo selettore farà si che la goccia di font awesome si muova solo se clicco su radio che non hanno già il checked.
+l'animazione del movimento della fa-tint è con l'active, quella del colore col checked 
+quindi nessuna delle due animazioni sovrascrive l'altra
+e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
 
 
 /* RESPONSIVE PER IL MENU' (width e height)*/
@@ -333,14 +325,8 @@ i{
         right: 1.3vw;
     }
 
-    .fa-tint,
-    .span-768{  
+    .fa-tint,{  
         display: none;
-    }
-
-    .fixed .span-767{
-        display: block;
-        font-size: normal;
     }
 }
 
@@ -356,46 +342,6 @@ i{
     }
 }
 
-@media screen and (max-height:900px){
-    .span-768{  
-        display: none;
-    }
-    .fixed .span-767{
-        display: block;
-        transform: rotate(360deg);
-        font-size: medium;
-        white-space: normal;
-    }        
-}
-
-@media screen and (max-height:700px){
-     .fixed .span-767{
-        font-size: small;
-    }
-}
-
-@media screen and (max-height:500px){
-    .fake-container,
-    .fixed .span-767,
-    .radio-mark,
-    .change-color,
-    .fa-tint{
-        display: none;
-    }
-
-    span.none{
-        display: inline-block;
-    }
-
-}
-
-@media screen and (max-width: 1000px) and (max-height:900px){
-    .fixed .span-767{
-        transform: rotate(270deg);
-        white-space: nowrap;
-        font-size: 1vh;
-    }       
-}
 
 @media screen and (max-width: 991px) and (max-height:1000px){
     .radio-mark,
@@ -425,6 +371,20 @@ i{
     span.left{
     right: 1.75vw;
     }
+}
+
+@media screen and (max-height:500px){
+   .fake-container,
+   .radio-mark,
+   .change-color,
+   .fa-tint{
+       display: none;
+   }
+
+   span.none{
+       display: inline-block;
+   }
+
 }
 
 /* IMPOSTAZIONE DEI BOX */
@@ -545,33 +505,31 @@ i{
     margin-left: 5px;
 }
 
-.main-span:active .main-animation{
+.main-span .main-animation{
     animation-name: main-animation;
-    animation-duration: 2.5s;
+    animation-duration: 5s;
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
 
-.nested-box .main-span:active .main-animation{
+.nested-box .main-animation{
     animation-timing-function: linear;
-    animation-duration: 3s;
 }
 
-.main-span:active .animation-combo{
+.main-span .animation-combo{
     animation-name: animation-combo;
-    animation-duration: 2.5s;
+    animation-duration: 5s;
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 }
 
-.nested-box .main-span:active .animation-combo{
+.nested-box .animation-combo{
     animation-timing-function: linear;
-    animation-duration: 3s;
 }
 
-.nested-box .main-span:active .third-animation-combo{
+.nested-box .third-animation-combo{
     animation-name: third-animation-combo;
-    animation-duration: 3s;
+    animation-duration: 5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
