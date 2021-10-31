@@ -133,11 +133,10 @@ e non posso selezionarlo con ~ o + per ridargli il display col secondo pulsante 
 /* "Chiudi" va in "display none" al suo checked, poi tornerà in "display flex" al successivo checked di "Apri"
 
 
-/* SEZIONE RADIOS PER CAMBIO SFONDO E ANIMAZIONI FA-TINT */
+/* SEZIONE RADIOS PER CAMBIO SFONDO E ANIMAZIONI FA-HAND-POINTER */
 .change-color{
     opacity: 0;
     position: fixed;
-    right: 2.05vw;
     z-index: 13;
     cursor: pointer;
 }
@@ -148,7 +147,6 @@ e non posso selezionarlo con ~ o + per ridargli il display col secondo pulsante 
     width: 15px;                                         
     display: inline-block;                               
     position: fixed;
-    right: 2vw;
 }
 
 .left{
@@ -158,6 +156,22 @@ span.left{
     right: 3vw;
 }
 
+.middle{
+    right: 2.05vw;
+}
+
+span.middle{
+    right: 2vw;
+}
+
+.right{
+    right: 1.05vw;
+}
+
+span.right{
+    right: 1vw;
+}
+
 input.white:checked + #white{
     border: 5px solid white;
     background-color: black; /* per creare un effetto visivo checked allo span vuoto*/
@@ -165,7 +179,8 @@ input.white:checked + #white{
 input.white:checked ~ main{
     background-color: white;
 }
-input.white:checked ~ .fa-tint{
+input.white:checked ~ .fa-hand-pointer{
+    transform: rotate(320deg);
     color: white;
 }
 #white{
@@ -177,7 +192,7 @@ input.white{
     top: 16.25vh;
 }
 
-/* Cambi di colore al main, radios e fa-tint con animazione rainbow inclusa */
+/* Cambi di colore al main, radios e fa-hand-pointer con animazione rainbow inclusa */
 input.rainbow:checked + #rainbow{
     border: 5px solid;
     background-color: black;
@@ -192,7 +207,8 @@ input.rainbow:checked ~ main{
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-input.rainbow:checked ~ .fa-tint{
+input.rainbow:checked ~ .fa-hand-pointer{
+    transform: rotate(230deg);
     animation-name: rainbow-color;
     animation-duration: 3.5s;
     animation-timing-function: linear;
@@ -217,7 +233,8 @@ input.red:checked + #red{
 input.red:checked ~ main{
     background-color: red;
 }
-input.red:checked ~ .fa-tint{
+input.red:checked ~ .fa-hand-pointer{
+    transform: rotate(10deg);
     color: red;
 }
 #red{
@@ -236,16 +253,17 @@ input.aqua:checked + #aqua{
 input.aqua:checked ~ main{
     background-color: aqua;
 }
-input.aqua:checked ~ .fa-tint{
+input.aqua:checked ~ .fa-hand-pointer{
+    transform: rotate(60deg);
     color: aqua;
 }
 #aqua{
     background-color: aqua;
-    top: 17.7vh;
+    top: 16.2vh;
     z-index: 12;
 }
 input.aqua{
-   top: 17.75vh;
+    top: 16.25vh;
 }
 
 input.lime:checked + #lime{
@@ -255,7 +273,8 @@ input.lime:checked + #lime{
 input.lime:checked ~ main{
     background-color: lime;
 }
-input.lime:checked ~ .fa-tint{
+input.lime:checked ~ .fa-hand-pointer{
+    transform: rotate(185deg);
     color: lime;
 }
 #lime{
@@ -267,25 +286,46 @@ input.lime{
    top: 20.75vh;
 }
 
+input.violet:checked + #violet{
+    border: 5px solid violet;
+    background-color: black; 
+}
+input.violet:checked ~ main{
+    background-color: violet;
+}
+input.violet:checked ~ .fa-hand-pointer{
+    transform: rotate(145deg);
+    color: violet;
+}
+#violet{
+    background-color: violet;
+    top: 20.7vh;
+    z-index: 12;
+    top: 19.2vh;
+}
+input.violet{
+   top: 19.25vh;
+}
+
 i{
     position: fixed;
     z-index: 10;
-    font-size: 1.5vw;
-    top: 15vh;
-    right: 0.5vw;
-    /* transform: rotate(320deg); */
+    font-size: 1.2vw;
+    top: 17.1vh;
+    right: 1.73vw;
+    transform: rotate(320deg);
     z-index: 13;   
 }
 
-/* Animazione della fa-tint*/
+/* Animazione della fa-hand-pointer*/
 .change-color:not(:checked):active ~ i{
     animation-name: virtual-click;
     animation-duration: 0.07s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
 }
-/* Questo selettore farà si che la goccia di font awesome si muova solo se clicco su radio che non hanno già il checked.
-l'animazione del movimento della fa-tint è con l'active, quella del colore col checked 
+/* Questo selettore farà si che la fa-hand-pointer si muova solo se clicco su radio che non hanno già il checked.
+l'animazione del movimento della fa-hand-pointer è con l'active, quella del colore col checked 
 quindi nessuna delle due animazioni sovrascrive l'altra
 e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
 
@@ -325,7 +365,7 @@ e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
         right: 1.3vw;
     }
 
-    .fa-tint{  
+    .fa-hand-pointer{  
         display: none;
     }
 }
@@ -377,7 +417,7 @@ e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
    .fake-container,
    .radio-mark,
    .change-color,
-   .fa-tint{
+   .fa-hand-pointer{
        display: none;
    }
 }
@@ -503,23 +543,15 @@ e cambiare colore al checked fa durare il nuovo colore fino al nuovo checked*/
 .main-span .main-animation{
     animation-name: main-animation;
     animation-duration: 5s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
-}
-
-.nested-box .main-animation{
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .main-span .animation-combo{
     animation-name: animation-combo;
     animation-duration: 5s;
-    animation-timing-function: ease-out;
-    animation-iteration-count: infinite;
-}
-
-.nested-box .animation-combo{
     animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .nested-box .third-animation-combo{
