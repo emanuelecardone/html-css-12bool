@@ -914,8 +914,8 @@ i{
         right: 5vw;
     }
 
-    .minimize,
-    .close-menu{
+    .minimize:not(.open-it),
+    .close-menu:not(.closed){
         right: 9.05vw;
     }
 }
