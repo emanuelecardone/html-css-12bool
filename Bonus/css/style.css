@@ -29,6 +29,8 @@ h2{
 }
 
 /* HOVER (bold al font del menù all'hover)*/
+
+/* è stato necessario selezionarli tutti poiché sono tutti elementi singoli */
 .change-color:hover ~ .fake-container,
 .radio-mark:hover ~ .fake-container,
 .fa-hand-pointer:hover ~ .fake-container,
