@@ -900,6 +900,14 @@ i{
     }
 }
 
+@media screen and (max-width: 991px) and (max-height:600px){
+    .page,
+    .switch{
+        top: 12.1vh;
+    }
+
+}
+
 @media screen and (max-width: 767px) and (max-height:600px){
     .page,
     .switch{
@@ -911,7 +919,6 @@ i{
         right: 9.05vw;
     }
 }
-
 
 /* IMPOSTAZIONE DEI BOX */
 .box{
