@@ -28,9 +28,7 @@ h2{
     height: 100%;
 }
 
-
-
-/* HOVER (bold all'hover)*/
+/* HOVER (bold al font del menù all'hover)*/
 .change-color:hover ~ .fake-container,
 .radio-mark:hover ~ .fake-container,
 .fa-hand-pointer:hover ~ .fake-container,
@@ -77,6 +75,7 @@ h2{
 
 .fake-container span{
     max-width: 60%;
+    line-height: 3vh;
 }
 
 .fixed span{
@@ -466,7 +465,7 @@ input.bronze:checked + #bronze{
     background-color: black;
 }
 input.bronze:checked ~ main{
-    background-color: #990000;
+    background-color: #CD7F32;
 }
 input.bronze:checked ~ .fa-hand-pointer{
     animation: 0.07s linear 1 up-virtual-click-2;
@@ -579,8 +578,61 @@ i{
 
 
 /* RESPONSIVE PER IL MENU' (width e height)*/
-@media screen and (max-width: 991px){
+/* Tutte le query sono scritte in modo che solo chi deve sovrascrivere lo faccia */
+@media screen and (max-width: 2000px){
+    
+    i{
+        top: 17.5vh;
+        right: 1.9vw;   
+    }
+    
+}
+
+@media screen and (max-width: 1700px){
+    
+    i{
+       font-size: 1.35vw;   
+    }
+    
+}
+
+@media screen and (max-width: 1400px){
     .fake-container span{
+        font-size: 12px;
+    }
+
+    .fake-container{
+        padding-left: 0;
+    }
+
+    i{
+        font-size: 1.5vw;   
+     }
+}
+
+@media screen and (max-width: 1200px){
+    .fake-container span{
+        writing-mode: vertical-lr; 
+        text-orientation: upright;
+        line-height: 1.5vw;
+        font-size: 0.7vh;
+        white-space: wrap;
+    }
+
+    .fake-container{
+        padding-top: 0;
+        padding-left: 5px;
+    }
+
+    i{
+        top: 17.7vh; 
+        right: 2vw;  
+     }
+}
+
+@media screen and (max-width: 991px){
+    .fake-container span,
+    .fa-hand-pointer{
         display: none;
     }
     
@@ -589,27 +641,128 @@ i{
         max-width: 6vw;
     }
 
-    .left{
+    .page, 
+    .switch{
+        width: 4.04vw;
+        right: 6.01vw;
+        min-height: 12vh;
+        top: 12.1vh;
+    }
+
+    .page{
+        background-image: url(../img/Blue\ wood.png);
+    }
+
+    .go-page-1,
+    .go-page-2{
+        font-size: 0.8vh;
+    }
+
+    .vanish{
+        display: none;
+    }
+
+    .close-menu,
+    .minimize{
+        width: 4.04vw;
+    }
+
+    .page span{
+        writing-mode: vertical-lr; 
+        text-orientation: upright;
+    }
+
+    .left,
+    .right{
         right: 2.05vw;
     }
 
-    span.left{
+    span.left,
+    span.right{
         right: 2vw;
     }
+
+    #red,
+    #bronze{
+        top: 14vh;
+    }
+
+    input.red,
+    input.bronze{
+        top: 14.05vh;
+    }
+
+    #aqua,
+    #emerald{
+        top: 15.5vh;
+    }
+
+    input.aqua,
+    input.emerald{
+        top: 15.55vh;
+    }
+
+    #lime,
+    #lilla{
+        top: 21.4vh;
+    }
+
+    input.lime,
+    input.lilla{
+        top: 21.45vh;
+    }
+
+    #violet,
+    #lapis{
+        top: 19.9vh;
+    }
+
+    input.violet,
+    input.lapis{
+        top: 19.95vh;
+    }
+
+    #rainbow,
+    #golden{
+        top: 18.45vh;
+    }
+
+    input.rainbow,
+    input.golden{
+        top: 18.50vh;
+    }
+
+    #white,
+    #silver{
+        top: 16.95vh;
+    }
+
+    input.white,
+    input.silver{
+        top: 17vh;
+    }
+
+
 }
+
 @media screen and (max-width: 767px){
     .fixed{
         width: 5vw;
         max-width: 5vw;
     }
 
-    .change-color,
-    .left{
+    .page, 
+    .switch{
+        right: 5.01vw;
+    }
+
+    .change-color{
        right: 1.35vw;
     }
 
-    .radio-mark,
-    span.left{
+    span.left,
+    span.right,
+    span.middle{
         right: 1.3vw;
     }
 
@@ -619,56 +772,135 @@ i{
 }
 
 @media screen and (max-width: 576px){
-    .change-color,
-    .left{
+    .change-color{
     right: 1vw;
     }
 
-    .radio-mark,
-    span.left{
+    span.left,
+    span.right,
+    span.middle{
     right: 1.05vw;
     }
 }
 
 
-@media screen and (max-width: 991px) and (max-height:1000px){
+@media screen and (max-height:1000px){
+    .vanish{
+        display: none;
+    }
+
+    .go-page-1,
+    .go-page-2{
+        font-size: 1vh;
+    }
+
+    
+
+ }
+
+@media screen and (max-height:600px){
+   .fa-hand-pointer{
+       display: none;
+   }
+
+   .page,
+   .switch{
+       top: 24.3vh;
+       right: 0;
+       width: 11.3vw;
+       max-width: 11.3vw;
+       background-image: url(../img/Blue\ wood.png);
+       background-repeat: no-repeat;
+       background-size: cover;
+   }
+}
+
+@media screen and (max-height:500px){
+    
+    .page,
+    .switch{
+        top: 25.3vh;
+    }
+
+    .close-menu,
+    .minimize,
+    .fake-container{
+        top: 13.1vh;
+    }
+ }
+
+ @media screen and (max-height:350px){
+    .fixed,
+    .fa-hand-pointer,
+    .change-color,
+    .radio-mark{
+        display: none;
+    } 
+ }
+
+ @media screen and (max-width: 991px) and (max-height:1000px){
     .radio-mark,
     .change-color{
         width: 10px;
         height: 10px;
     }
     
-    .change-color,
-    .left{
+    .left,
+    .right,
+    .middle{
     right: 2.2vw;
     }
 
-    .radio-mark,
-    span.left{
+    span.left,
+    span.right,
+    span.middle{
     right: 2.25vw;
     }
 }
 
 @media screen and (max-width: 768px) and (max-height:1000px){
-    .change-color,
-    .left{
+    .left,
+    .right,
+    .middle{
     right: 1.7vw;
     }
 
-    .radio-mark,
-    span.left{
+    
+    span.left,
+    span.right,
+    span.middle{
     right: 1.75vw;
     }
 }
 
-@media screen and (max-height:500px){
-   .fake-container,
-   .radio-mark,
-   .change-color,
-   .fa-hand-pointer{
-       display: none;
-   }
+
+ @media screen and (max-width: 991px) and (max-height:600px){
+    .page, 
+    .switch{
+        width: 4.04vw;
+        right: 6.01vw;
+        min-height: 12vh;
+        top: 12.1vh;
+    }
+
+    .close-menu,
+    .minimize{
+        width: 4.04vw;
+    }
 }
+
+@media screen and (max-width: 767px) and (max-height:600px){
+    .page,
+    .switch{
+        right: 5vw;
+    }
+
+    .minimize,
+    .close-menu{
+        right: 9.05vw;
+    }
+}
+
 
 /* IMPOSTAZIONE DEI BOX */
 .box{
@@ -1147,6 +1379,5 @@ ma se la direzione non cambia starei facendo partire la stessa animazione 2 volt
         z-index: 0;
     }
 }
-  
   
   
