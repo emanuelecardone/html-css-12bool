@@ -171,11 +171,13 @@ hanno z-index più alto e opacity 0 per renderli clickabili e non visibili */
     display: none;
 } 
 
-.go-page-1{
+.go-page-1, 
+.go-page-1 .vanish{
     font-size: 0.35vw;
 }
-.go-page-2{ 
+.go-page-2, .vanish{ 
     font-size: 0.4vw; /* perché è scritto orizzontalmente */
+    margin: 0 1.5px;
 } 
 
 /* Chiusura menù - parte 1*/
@@ -627,6 +629,15 @@ i{
     i{
         top: 17.7vh; 
         right: 2vw;  
+     }
+
+     .vanish{
+         display: none;
+     }
+
+     .go-page-1,
+     .go-page-2{
+         font-size: 0.6vw;
      }
 }
 
