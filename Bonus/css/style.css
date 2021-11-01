@@ -823,6 +823,10 @@ i{
    .fa-hand-pointer{
        display: none;
    }
+
+   .switch{
+       height: 3.2vh;
+   }
 }
 
 @media screen and (max-height:500px){
@@ -832,10 +836,20 @@ i{
         top: 25.3vh;
     }
 
+    .switch{
+        height: 4vh;
+    }
+
     .close-menu,
     .minimize,
     .fake-container{
         top: 13.1vh;
+    }
+ }
+
+ @media screen and (max-height:450px){
+    .switch{
+        height: 6vh;
     }
  }
 
