@@ -804,25 +804,24 @@ i{
     .go-page-2{
         font-size: 1vh;
     }
+ }
 
-    
-
+ @media screen and (max-height:800px){
+    .page,
+    .switch{
+        top: 24.3vh;
+        right: 0;
+        width: 11.25vw;
+        max-width: 11.25vw;
+        background-image: url(../img/Blue\ wood.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
  }
 
 @media screen and (max-height:600px){
    .fa-hand-pointer{
        display: none;
-   }
-
-   .page,
-   .switch{
-       top: 24.3vh;
-       right: 0;
-       width: 11.3vw;
-       max-width: 11.3vw;
-       background-image: url(../img/Blue\ wood.png);
-       background-repeat: no-repeat;
-       background-size: cover;
    }
 }
 
@@ -898,14 +897,19 @@ i{
     .minimize{
         width: 4.04vw;
     }
-}
 
-@media screen and (max-width: 991px) and (max-height:600px){
     .page,
     .switch{
         top: 12.1vh;
     }
+}
 
+@media screen and (max-width: 991px) and (max-height:500px){
+    
+    .page,
+    .switch{
+        top: 13.1vh;
+    }
 }
 
 @media screen and (max-width: 767px) and (max-height:600px){
